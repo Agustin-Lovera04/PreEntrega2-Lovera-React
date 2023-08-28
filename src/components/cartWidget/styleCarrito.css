@@ -1,0 +1,27 @@
+.carrito{
+    background-image: url(/imagenes/shopping-cart.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 60px;
+    height: 40px;
+    border-radius: 35px;
+}
+.contadorCarrito{
+        font-size: 20px;
+        color: white;
+        margin-top: 40%;
+        margin-left: -10px;
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        border-radius: 50%;
+        height: min-content;
+        min-width: 30px;
+}
+
+.imgCarrYCont{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 10px;
+}
