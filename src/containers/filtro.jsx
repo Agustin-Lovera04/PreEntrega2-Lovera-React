@@ -4,7 +4,6 @@ export const filtroCategoria = (articulos, id) => {
   }
   
 export const filtroDetail = (articulos, id) => {
-  console.log(id)
     const articulosDetails = articulos.find((articulo) => articulo.id === parseInt(id))
     return articulosDetails
   }
