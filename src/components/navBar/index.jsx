@@ -28,12 +28,6 @@ const NavBar = () => {
                     <Link className="dropdown-item" to="/">VER TODOS</Link>
                   </ul>
                 </li>
-{/*                 <li className="nav-item">
-                  <p className="nav-link text-light">Contacto</p>
-                </li>
-                <li className="nav-item">
-                  <p className="nav-link text-light">Sobre Nosotros</p>
-                </li>*/}
               </ul> 
               <ul className="navbar-nav">
                 <CartWidget />
