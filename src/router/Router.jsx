@@ -1,6 +1,8 @@
 import '../App.css'
+import Contacto from '../components/contacto';
 import ItemListContainer from '../components/itemListContainer'
 import NavBar from '../components/navBar'
+import SobreNosotros from '../components/sobreNosotros';
 import ItemDetailContainer from '../containers/itemDetailContainer'
 import {
     BrowserRouter,
@@ -16,6 +18,8 @@ const Router = () => {
                 <Route path="/" element={<ItemListContainer />} />
                 <Route path="/category/:id" element={<ItemListContainer/>} />
                 <Route path="/item/:id" element={<ItemDetailContainer/>} />
+                <Route path="/contacto" element={<Contacto/>} />
+                <Route path="/sobreNosotros" element={<SobreNosotros/>} />
             </Routes>
         </BrowserRouter >
     )

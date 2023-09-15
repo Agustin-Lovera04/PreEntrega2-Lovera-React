@@ -1,23 +1,37 @@
 import { useParams } from "react-router-dom"
 import ItemDetail from "../../components/itemDetail/itemDetail"
-import ConsultaBack from "../consultarBack"
-import { filtroDetail } from "../filtro"
 import { useEffect, useState } from "react"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../../firebase/client"
 
 const ItemDetailContainer = () => {
   const { id } = useParams()
-  const { articulos, cargando } = ConsultaBack()
   const [itemDetail, setItemDetail] = useState({})
+  const [cargando, setCargando] = useState(true)
+
+  const articuloRef = doc(db, "articulos", id)
+  
+  const getArticuloFiltrado = () => {
+    getDoc(articuloRef)
+      .then((data) => {
+        if (data.exists()) {
+          setItemDetail(data.data())
+          setCargando(false)
+        }
+      })
+      .catch(() => {
+        setCargando(false)
+      })
+  }
 
   useEffect(() => {
-    const itemFiltrado = filtroDetail(articulos, id)
-    setItemDetail(itemFiltrado)
-  }, [articulos, id])
+    getArticuloFiltrado()
+  }, [id])
 
   return (
     <div>
       {cargando ? (
-        <h1>Cargando Articulos...</h1>
+        <span className="loader"></span>
       ) : (
         <div>
           <ItemDetail articulo={itemDetail} />
