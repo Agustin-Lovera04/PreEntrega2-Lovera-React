@@ -10,7 +10,7 @@
   margin: 0;
 }
 
-.contenidoPpal{
+/* .contenidoPpal{
   width: 100%;
   height: 100%;
   background-color: lightgrey;
@@ -18,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
